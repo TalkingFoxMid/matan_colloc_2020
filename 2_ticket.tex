@@ -1,0 +1,92 @@
+\documentclass[a4paper,14pt]{article}
+ 
+%Russian-specific packages
+%--------------------------------------
+\usepackage{cmap}					
+\usepackage[english,russian]{babel}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+%--------------------------------------
+
+%Math
+%--------------------------------------
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%-------------------------------------- 
+
+%Hyperlinks
+%--------------------------------------
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
+%--------------------------------------
+\usepackage[14pt]{extsizes}
+
+\linespread{1.15}
+
+\pagestyle{empty}
+
+\begin{document}
+
+    \begin{center}
+        \textbf{2) Необходимое условие интегрируемости функции по Риману.}
+    \end{center}
+
+    \textbf{Теорема (необходимое условие интегрируемости).}
+    
+    Если $f$ - интегрируема на $[a, b]$, то $f$ - ограничена на $[a, b]$.
+
+    $\;$
+
+    \textit{Доказательство.} О/п: Пусть $f$ - интегрируема и не ограничена на $[a, b]$.
+
+    $\;$
+
+    \begin{center}
+        {Распишем по Коши:}
+    \end{center}
+
+    $$\forall\epsilon>0\;\;\exists\delta(\epsilon)>0,\;\forall\tau,d<\delta(\epsilon)\;\;\forall\lbrace\xi\rbrace_{i=0}^{n-1}$$
+
+    $$\vert\sigma(\tau,\lbrace\xi\rbrace_i)-I\vert<\epsilon$$
+
+    \begin{center}
+        {Возьмём $\epsilon=1\;\;\exists\delta(1)>0\;\;\forall\tau:d<\delta(1)\;\;\forall\lbrace\xi_i\rbrace$, подставим в неравенство и ограничим слева:}
+    \end{center}
+
+    $$\;\;\vert\sigma(\tau,\lbrace\xi_i\rbrace)\vert-\vert{I}\vert\leq\vert\sigma(\tau,\lbrace\xi_i\rbrace)-I\vert<1 \label{eq:1}$$
+
+    \begin{center}
+        {Т.к. $f$ - не ограничена => при разбиении на одном из отрезков она не ограничена.}
+    \end{center}
+
+    \begin{center}
+        {Распишем интегральную сумму:}
+    \end{center}
+
+    $$\sigma(\tau,\lbrace{\xi_i}\rbrace)=f(\xi_0)\cdot\triangle{x_0}+\underbrace{\overset{n-1}{\underset{i=1}{\sum}}f(\xi_i)\cdot\triangle{x_i}}_{\sigma_1}$$
+
+    \begin{center}
+        {Подставим в последнее неравенство и снова ограничим слева меньшим значением:}
+    \end{center}
+
+    $$\vert{f(\xi_0)}\vert\cdot\triangle{x_0}-\vert{\sigma_1}\vert-\vert{I}\vert\leq\vert{f(\xi_0)\cdot\triangle{x_0}+\sigma_1}\vert-\vert{I}\vert<1$$
+
+    \begin{center}
+        {Перенесём в правую часть и поделим на $\triangle{x_0}$:}
+    \end{center}
+    
+    $$\vert{f(\xi_0)}\vert<\frac{\vert\sigma_1\vert+\vert{I}\vert+1}{\triangle{x_0}}$$
+
+    $\forall\xi_n\in[a_1, b_1]$ => ограничена - противоречие.
+
+    \begin{center}
+        {$\heartsuit\;\;$Условие \textit{необходимое}, но \textit{не достатоное}.$\;\;\heartsuit$}
+    \end{center}
+
+\end{document}
